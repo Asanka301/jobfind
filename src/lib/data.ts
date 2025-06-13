@@ -1,0 +1,85 @@
+const dummyJobs = [
+  {
+    id: "1",
+    title: "Software Engineer",
+    location: "San Francisco, CA",
+    salary: 120000,
+    salaryType: "Year",
+    negotiable: true,
+    jobType: ["Full Time"],
+    description:
+      "Develop and maintain web applications using JavaScript, React, and Node.js.",
+    tags: ["Tech", "Engineering", "JavaScript"],
+    skills: ["JavaScript", "React", "Node.js"],
+    likes: [],
+    createdBy: "65f4e8b9c3a9b713e87f1a23", // Example ObjectId
+    applicants: [],
+    createdAt : "2025-12-22"
+  },
+  {
+    id: "2",
+    title: "Cloud Engineer",
+    location: "Remote",
+    salary: 110000,
+    salaryType: "Year",
+    negotiable: false,
+    jobType: ["Full Time", "Contract"],
+    description: "Build and manage cloud infrastructure on AWS and Azure.",
+    tags: ["Cloud", "AWS", "Azure"],
+    skills: ["AWS", "Azure", "Terraform"],
+    likes: [],
+    createdBy: "65f4e8b9c3a9b713e87f1a24",
+    applicants: [],
+    createdAt : "2025-12-22"
+  },
+  {
+    id: "3",
+    title: "Data Scientist",
+    location: "New York, NY",
+    salary: 130000,
+    salaryType: "Year",
+    negotiable: true,
+    jobType: ["Part Time"],
+    description: "Analyze large datasets and build machine learning models.",
+    tags: ["Data Science", "AI", "Machine Learning"],
+    skills: ["Python", "TensorFlow", "SQL"],
+    likes: [],
+    createdBy: "65f4e8b9c3a9b713e87f1a25",
+    applicants: [],
+    createdAt : "2025-12-22"
+  },
+  {
+    id: "4",
+    title: "Frontend Developer",
+    location: "London, UK",
+    salary: 95000,
+    salaryType: "Year",
+    negotiable: false,
+    jobType: ["Full Time", "Internship"],
+    description: "Create responsive and user-friendly web interfaces.",
+    tags: ["Frontend", "JavaScript", "UI/UX"],
+    skills: ["HTML", "CSS", "JavaScript", "React"],
+    likes: [],
+    createdBy: "65f4e8b9c3a9b713e87f1a26",
+    applicants: [],
+    createdAt : "2025-12-22"
+  },
+  {
+    id: "5",
+    title: "DevOps Engineer",
+    location: "Berlin, Germany",
+    salary: 105000,
+    salaryType: "Year",
+    negotiable: true,
+    jobType: ["Full Time"],
+    description: "Manage CI/CD pipelines and infrastructure as code.",
+    tags: ["DevOps", "CI/CD", "Automation"],
+    skills: ["Docker", "Kubernetes", "Jenkins"],
+    likes: [],
+    createdBy: "65f4e8b9c3a9b713e87f1a27",
+    applicants: [],
+    createdAt : "2025-12-22"
+  },
+];
+
+export default dummyJobs;
