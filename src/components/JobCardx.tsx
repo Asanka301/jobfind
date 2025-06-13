@@ -1,15 +1,33 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React from "react";
 import { Calendar } from "lucide-react";
 import { useRouter } from "next/navigation";
-//import  formatDates  from "@/lib/utils";
 
+// Define the Job type
+interface Job {
+  id: number | string;
+  title: string;
+  location: string;
+  description: string;
+  salary: number;
+  salaryType: string;
+  companyLogo?: string;
+  companyName?: string;
+  createdAt: string;
+  jobType: string[];
+}
 
-const JobCard = ({ job, route  }) => {
+// Define the component props type
+interface JobCardProps {
+  job: Job;
+  route: string;
+}
+
+const JobCard: React.FC<JobCardProps> = ({ job, route }) => {
   const router = useRouter();
 
-  const jobTypeBg = (type : any) => {
+  const jobTypeBg = (type: string) => {
     switch (type) {
       case "Full Time":
         return "bg-green-500/20 text-green-600";
@@ -33,8 +51,8 @@ const JobCard = ({ job, route  }) => {
         >
           <div className="w-12 h-12 bg-gray-200 rounded-md flex items-center justify-center overflow-hidden">
             <Image
-              src={job?.companyLogo || "/default-logo.png"}
-              alt={job?.companyName || "Company"}
+              src={job.companyLogo || "/default-logo.png"}
+              alt={job.companyName || "Company"}
               width={40}
               height={40}
               className="rounded-md object-cover"
@@ -49,7 +67,7 @@ const JobCard = ({ job, route  }) => {
       </div>
 
       <div className="flex items-center gap-2">
-        {job.jobType?.map((type : any, index : any) => (
+        {job.jobType.map((type, index) => (
           <span
             key={index}
             className={`py-1 px-3 text-xs font-medium rounded-md border ${jobTypeBg(
@@ -62,12 +80,10 @@ const JobCard = ({ job, route  }) => {
       </div>
 
       <p className="text-sm text-gray-600">
-        {job.description?.length > 100
+        {job.description.length > 100
           ? `${job.description.substring(0, 100)}...`
           : job.description}
       </p>
-
-    
 
       <div className="flex justify-between items-center">
         <p className="text-lg font-semibold text-gray-700">
@@ -75,7 +91,7 @@ const JobCard = ({ job, route  }) => {
         </p>
         <p className="flex items-center gap-2 text-sm text-gray-400">
           <Calendar size={16} />
-          Posted: {(job.createdAt)}
+          Posted: {job.createdAt}
         </p>
       </div>
     </div>
